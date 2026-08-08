@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Add-Type -AssemblyName System.Drawing; Get-ChildItem \"img\\\\Camera cerebro 1.png\",\"img\\\\Layer_2.png\" | ForEach-Object { $i=[System.Drawing.Image]::FromFile\\($_.FullName\\); \"{0}: {1}x{2}\" -f $_.Name,$i.Width,$i.Height; $i.Dispose\\(\\) })",
+      "PowerShell($c = @\\(\"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\",\"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\",\"C:\\\\Program Files \\(x86\\)\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\"\\); foreach\\($p in $c\\){ if\\(Test-Path $p\\){ \"FOUND: $p\" } })"
+    ]
+  }
+}

@@ -1,0 +1,326 @@
+/* =========================================================
+   Emive · Landing Page Smart Alarm
+   Reprodução da landing "Lp Captação Smart Alarm" (Figma)
+   Design base: 1920 x 2963px · Fonte: Inter
+   ========================================================= */
+
+:root{
+  --yellow:        #FFC709;  /* amarelo da marca (botões/acentos)   */
+  --yellow-light:  #FDE24B;  /* amarelo claro (fundos)              */
+  --highlight:     #FFE500;  /* realce do subtítulo do app          */
+  --orange-a:      #F68B24;  /* início do gradiente laranja         */
+  --orange-b:      #FFC709;  /* fim do gradiente (amarelo da marca) */
+  --dark:          #333333;  /* fundo da seção CTA                  */
+  --black:         #000000;  /* rodapé                              */
+  --card-bg:       #EDEEF0;  /* fundo dos cards                     */
+  --ink:           #111111;  /* texto principal escuro              */
+  --gray:          #4d4d4d;  /* texto de apoio                      */
+  --white:         #ffffff;
+
+  --grad-orange: linear-gradient(90deg, var(--orange-a) 0%, var(--orange-b) 100%);
+  --content: 1600px;         /* largura útil do conteúdo            */
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.4;
+  overflow-x:hidden;
+}
+
+img{ max-width:100%; height:auto; display:block; }
+
+a{ text-decoration:none; color:inherit; }
+
+.wrap{
+  width:100%;
+  max-width:var(--content);
+  margin:0 auto;
+  padding:0 40px;
+}
+
+/* ---------- Botões laranja (gradiente) ---------- */
+.btn-orange{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  padding:20px 40px;
+  border-radius:60px;
+  background:var(--grad-orange);
+  color:var(--white);
+  font-weight:700;
+  font-size:22px;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  white-space:nowrap;
+  box-shadow:0 10px 25px rgba(246,139,36,.28);
+  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+.btn-orange .arrow{ font-size:1.15em; font-weight:400; }
+.btn-orange:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(246,139,36,.38); filter:brightness(1.03); }
+.btn-orange--wide{ min-width:360px; }
+
+/* =========================================================
+   TOPBAR / HEADER
+   ========================================================= */
+.topbar{
+  background:var(--white);
+  border-bottom:1px solid #f0f0f0;
+}
+.topbar__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  min-height:88px;
+}
+.topbar__logo img{ height:56px; width:auto; }
+.topbar__msg{
+  margin:0;
+  flex:1;
+  text-align:center;
+  font-size:16px;
+  font-weight:400;
+  color:var(--ink);
+}
+.topbar__msg strong{ font-weight:800; }
+
+.btn-contratar{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--yellow);
+  color:var(--black);
+  font-weight:800;
+  font-size:15px;
+  letter-spacing:.5px;
+  padding:14px 30px;
+  border-radius:8px;
+  white-space:nowrap;
+  transition:filter .15s ease, transform .15s ease;
+}
+.btn-contratar:hover{ filter:brightness(.97); transform:translateY(-1px); }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative;
+  width:100%;
+  line-height:0;
+}
+.hero__img{ width:100%; }
+/* área clicável invisível sobre o botão "Solicite seu orçamento" da imagem */
+.hero__cta{
+  position:absolute;
+  left:40.5%;
+  top:81%;
+  width:19%;
+  height:8.5%;
+  border-radius:40px;
+}
+
+/* =========================================================
+   SISTEMA SMART
+   ========================================================= */
+.sistema{ background:var(--white); padding:70px 0 60px; }
+.sistema__inner{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;   /* imagem grande à direita, texto recuado à esquerda (como no Figma) */
+  gap:56px;
+  max-width:none;
+  margin:0;
+  padding-left:clamp(40px, 12%, 300px);   /* recuo à esquerda como no Figma (escala com a tela) */
+  padding-right:clamp(40px, 2%, 60px);
+}
+.sistema__text{ flex:0 0 clamp(480px, 30%, 500px); }
+.sistema__title{
+  margin:0 0 34px;
+  font-weight:300;
+  font-size:46px;
+  line-height:1.02;
+  letter-spacing:-.5px;
+  text-transform:uppercase;
+  display:flex;
+  flex-direction:column;
+}
+.sistema__title .strong{ font-weight:800; }
+.sistema__title .light{ font-weight:300; }
+.sistema__sub{
+  margin:0 0 34px;
+  font-size:22px;
+  font-weight:400;
+  color:var(--ink);
+  max-width:460px;
+  line-height:1.35;
+}
+.sistema__sub strong{ font-weight:800; }
+.sistema__media{ flex:0 1 920px; min-width:0; }
+.sistema__media img{ width:100%; }
+
+/* =========================================================
+   CARDS / DIFERENCIAIS
+   ========================================================= */
+.cards{ background:var(--white); padding:20px 0 40px; }
+.cards__img{ width:100%; max-width:1609px; margin:0 auto; }
+
+/* =========================================================
+   SUPERAPP
+   ========================================================= */
+.app{ background:var(--white); padding:60px 0; }
+.app__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:60px;
+}
+.app__media{ flex:0 1 785px; min-width:0; }
+.app__media img{ width:100%; }
+.app__text{ flex:0 1 560px; }
+.app__title{
+  margin:0 0 18px;
+  font-size:44px;
+  font-weight:800;
+  letter-spacing:-.5px;
+}
+.app__highlight{
+  display:inline;
+  margin:0;
+  font-size:24px;
+  font-weight:800;
+  line-height:1.7;
+  background:linear-gradient(var(--highlight),var(--highlight));
+  box-shadow:8px 0 0 var(--highlight), -8px 0 0 var(--highlight);
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+}
+.app__desc{
+  margin:28px 0 26px;
+  font-size:18px;
+  color:var(--gray);
+  line-height:1.35;
+}
+.app__list{
+  margin:0 0 34px;
+  padding:0;
+  list-style:none;
+  font-size:18px;
+  color:var(--ink);
+}
+.app__list li{ position:relative; padding-left:18px; margin-bottom:6px; }
+.app__list li::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  color:var(--ink);
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+.cta{ background:var(--dark); padding:80px 0; }
+.cta__inner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:40px;
+}
+.cta__title{
+  margin:0;
+  color:var(--white);
+  font-size:56px;
+  font-weight:800;
+  line-height:1.05;
+  letter-spacing:-.5px;
+  text-transform:uppercase;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer{ background:var(--black); }
+.footer__inner{
+  position:relative;
+  min-height:clamp(120px, 17vw, 198px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.footer__cam{
+  height:clamp(80px, 16vw, 200px);
+  width:auto;
+  position:absolute;
+  left:30%;
+  bottom:0;
+  transform:translateX(-50%);
+}
+.footer__logo{
+  height:clamp(34px, 4.8vw, 60px);
+  width:auto;
+  /* o recuo acompanha a largura do container: em telas estreitas o logo
+     deixa de ser empurrado para fora da viewport */
+  margin-left:min(600px, 40%);
+}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media (max-width:1200px){
+  .sistema__title{ font-size:40px; }
+  .cta__title{ font-size:46px; }
+  .app__title{ font-size:38px; }
+}
+
+@media (max-width:960px){
+  .wrap{ padding:0 24px; }
+
+  /* header vira coluna */
+  .topbar__inner{ flex-wrap:wrap; justify-content:center; text-align:center; min-height:0; padding:16px 0; gap:14px; }
+  .topbar__msg{ order:3; flex:1 1 100%; font-size:15px; }
+
+  /* seções de duas colunas empilham */
+  .sistema__inner,
+  .app__inner{ flex-direction:column; text-align:center; gap:36px; }
+  /* reseta o recuo fluido no empilhamento mobile */
+  .sistema__inner{ justify-content:center; padding-left:24px; padding-right:24px; }
+  .sistema__text,
+  .app__text{ flex:0 0 auto; width:100%; max-width:640px; }
+  /* imagens abraçam o conteúdo (evita altura fantasma do flex-basis em coluna) */
+  .sistema__media,
+  .app__media{ flex:0 0 auto; width:100%; max-width:520px; margin:0 auto; }
+  .app__media{ max-width:420px; }
+  .sistema__sub{ margin-left:auto; margin-right:auto; }
+  .sistema__title{ align-items:center; }
+  .app__media{ order:-1; }
+  .app__title,
+  .app__desc{ }
+  .app__list{ display:inline-block; text-align:left; }
+
+  .cta__title{ font-size:40px; }
+}
+
+@media (max-width:560px){
+  .wrap{ padding:0 18px; }
+  .btn-orange{ font-size:18px; padding:16px 28px; }
+  .btn-orange--wide{ min-width:0; width:100%; max-width:340px; }
+
+  .sistema{ padding:44px 0; }
+  .sistema__title{ font-size:30px; margin-bottom:24px; }
+  .sistema__sub{ font-size:18px; }
+
+  .app{ padding:44px 0; }
+  .app__title{ font-size:30px; }
+  .app__highlight{ font-size:20px; }
+
+  .cta{ padding:56px 0; }
+  .cta__title{ font-size:30px; }
+}
